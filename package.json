@@ -1,0 +1,70 @@
+{
+  "name": "insta-sync",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=8.11"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf build",
+    "dev": "ts-node src/main.ts",
+    "lint": "tslint 'src/**/*.ts' 'types/**/*.ts'",
+    "lint-fix": "tslint --fix 'src/**/*.ts' 'types/**/*.ts'",
+    "nsp": "nsp check",
+    "prebuild": "npm run clean && npm run lint",
+    "pretest": "npm run lint",
+    "start": "node build/main.js",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/test/**/*.test.ts"
+    ],
+    "moduleFileExtensions": [
+      "node",
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    }
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "config": "1.30.0",
+    "lodash": "4.17.10",
+    "log4js": "2.5.3",
+    "mongoose": "5.0.17"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.34",
+    "@types/jest": "22.2.3",
+    "@types/lodash": "4.14.108",
+    "@types/node": "10.0.4",
+    "jest": "22.4.3",
+    "nodemon": "1.17.4",
+    "nsp": "3.2.1",
+    "rimraf": "^2.6.2",
+    "ts-jest": "22.4.5",
+    "ts-node": "6.0.2",
+    "tslint": "5.10.0",
+    "tslint-config-airbnb": "5.8.0",
+    "typescript": "2.8.3"
+  }
+}

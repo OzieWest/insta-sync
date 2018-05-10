@@ -1,0 +1,12 @@
+{
+  "defaultSeverity": "error",
+  "extends": "tslint-config-airbnb",
+  "rules": {
+    "object-shorthand-properties-first": false,
+    "align": [
+      true,
+      "parameters",
+      "statements"
+    ]
+  }
+}
